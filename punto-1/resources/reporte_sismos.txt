@@ -1,0 +1,31 @@
+REPORTE DE MOVIMIENTOS SÍSMICOS POR CIUDAD
+
+Ciudad: Armenia (C01)
+Habitantes: 304314
+Movimientos:
+  S001 | 08:15:02 | 08:15:18 | magnitud 3.4 | profundidad 18.0 km
+  S003 | 11:42:00 | 11:42:12 | magnitud 2.8 | profundidad 10.0 km
+
+Total de movimientos: 2
+Movimiento de mayor magnitud: S001 - 3.4
+Profundidad promedio: 14.00
+
+Ciudad: Calarcá (C02)
+Habitantes: 78684
+Movimientos:
+  S002 | 09:30:10 | 09:30:29 | magnitud 4.1 | profundidad 25.0 km
+
+Total de movimientos: 1
+Movimiento de mayor magnitud: S002 - 4.1
+Profundidad promedio: 25.00
+
+Ciudad: Circasia (C03)
+Habitantes: 30941
+Movimientos: Sin movimientos registrados
+Total de movimientos: 0
+Movimiento de mayor magnitud: No aplica
+Profundidad promedio: No aplica
+
+
+Registros rechazados en ciudades: 0
+Registros rechazados en movimientos: 0

@@ -42,8 +42,11 @@ defmodule ServicioSismos do
         validos = Enum.reverse(validos)
         case solicitud do
           :general ->
+          mayores = movimientos_mayores_A20(validos)
+          detalle_mayores = if mayores == [], do: "No hay movimientos con profundidad mayor a 20 km", else: listar(mayores)
             "REPORTE GENERAL DE SISMOS\n\n" <>
               Enum.map_join(ciudades, "\n", fn ciudad -> reporte_ciudad(ciudad, validos) end) <>
+          "\nMovimientos con profundidad mayor a 20 km:\n#{detalle_mayores}\n" <>
               "\nRechazados ciudades: #{rc}\nRechazados movimientos: #{rm + extra}\n"
           id ->
             case Enum.find(ciudades, fn ciudad -> ciudad.id == id end) do
@@ -109,7 +112,9 @@ defmodule ServicioSismos do
       _ -> :error
     end
   end
-
+defp movimientos_mayores_A20 (movimientos) do
+    Enum.filter(movimientos, fn m -> m.profundidad > 20.0 end)
+  end 
   defp reporte_ciudad(ciudad, movimientos) do
     asociados = Enum.filter(movimientos, fn m -> m.id_ciudad == ciudad.id end)
     {cantidad, maximo, suma} = resumir(asociados, 0, nil, 0.0)
