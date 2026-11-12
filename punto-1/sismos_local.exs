@@ -18,7 +18,7 @@ defmodule SismosLocal do
   y generar un reporte por ciudad
   """
 
-  @doc"""
+  @doc """
   Función main
   """
   def main do
